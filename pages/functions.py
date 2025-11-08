@@ -143,18 +143,24 @@ st.markdown("""
                 b = b * 2
                 c = c * 2
 
-                print(a + b + c)
+                print(a, b, c)
             
             a = 1
             b = 2
             c = 3
 
             add_three_numbers(a, b, c)
+            print(a, b, c)
             ```
 
-            This will output `12`, which is `(1 * 2) + (2 * 2) + (3 * 2)`. But the question is, what are the values of the `a`, `b`, and `c` global variables (the ones outside of the function)? Well, they are still `1`, `2`, and `3` respectively. However, the values of the parameters `a`, `b`, and `c` are now `2`, `4`, and `6` respectively. This is due to the scope of the parameters.
+            You would get the following output if you ran the code:
 
-            The function's `a`, `b`, and `c` are entirely different variables from the global `a`, `b`, and `c`, despite having the same name. Imagine it this way: Python has a ton of storage space for the main program. For the three variables outside of the function, Python created three boxes and named them `a`, `b`, and `c`. However, for the function, Python set aside three more boxes and named them `a`, `b`, and `c` and set them aside along with the function. It is a coincidence that the names are the same, but the variables themselves are not connected. Therefore, whatever the function does to its three boxes has no effect on the outside three boxes.
+            ```
+            2 4 6
+            1 2 3
+            ```
+
+            Note that the top row is the output of the function call, and the bottom row is the output of the print statements outside of the function. The function's `a`, `b`, and `c` are entirely different variables from the global `a`, `b`, and `c`, despite having the same name. Imagine it this way: Python has a ton of storage space for the main program. For the three variables outside of the function, Python created three boxes and named them `a`, `b`, and `c`. However, for the function, Python set aside three more boxes and named them `a`, `b`, and `c` and set them aside along with the function. It is a coincidence that the names are the same, but the variables themselves are not connected. Therefore, whatever the function does to its three boxes has no effect on the outside three boxes.
 
             A more obvious example is if I switched the order of the arguments:
 
@@ -162,7 +168,7 @@ st.markdown("""
             add_three_numbers(c, b, a)
             ```
 
-            This will output `12`, which is `(3 * 2) + (2 * 2) + (1 * 2)`. This is what happened under the hood:
+            This will output `6 4 2`. This is what happened under the hood:
             - global `c` is the first argument and its value is assigned to the first parameter, which is the local `a`. The function's `a` now stores the value `3` from the global `c`.
             - global `b` is the second argument and its value is assigned to the second parameter, which is the local `b`. The function's `b` now stores the value `2` from the global `b`.
             - global `a` is the third argument and its value is assigned to the third parameter, which is the local `c`. The function's `c` now stores the value `1` from the global `a`.
@@ -248,4 +254,38 @@ elif user_answer is not None:
     st.error("Incorrect. The value to be returned is just separated from the `return` keyword by a space.")
 
 st.markdown("---")
+
+# Pass by reference, pass by value
+st.header("Pass by Reference, Pass by Value")
+st.markdown("""
+            So far, we have been using basic data types as arguments. However, what happens if you use a compound data type (e.g. `list`, `dict`, `tuple`) as an argument? Let's find out. If you can, run the following code and see what you get:
+
+            ```python
+            def add_one_to_list(l):
+                l.append(1)
+            
+            my_list = [1, 2, 3]
+            add_one_to_list(my_list)
+            print(my_list)
+            ```
+
+            You should get the following output:
+
+            ```
+            [1, 2, 3, 1]
+            ```
+            
+            So, why is this the output? Earlier, we saw that the three global variables were not changed, but in this case, the global variable *did* change. The distinction here is lies in the difference of two concepts: pass by reference and pass by value.
+
+            Imagine that you are in a classroom, and your friend next to you asks for both a pencil and a quiz paper. You go to your desk, grab the pencil, and give it to your friend. You then go to the teacher's desk, grab a copy of the quiz paper, and give it to  your friend.
+
+            In the above scenario, sharing the pencil is an example of pass by reference. You are giving your friend the actual pencil, so any changes to the pencil will be reflected on the actual pencil. However, when you give your friend the quiz paper, you are giving a copy of the quiz paper, not your own actual quiz paper. Functionally, the quiz papers are identical, but what your friend does to their own quiz paper will not affect your quiz paper.
+
+            Now back to Python, passing in integers or floats or strings are all examples of pass by value.
+            """)
+
+
+
+
+
 st.caption("© 2025 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

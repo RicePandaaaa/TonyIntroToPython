@@ -114,6 +114,13 @@ if user_answer == "No":
 elif user_answer == "Yes":
     st.error("Incorrect. `'\"` is not a valid string because the quotes are different. A string can be empty, but it cannot be enclosed in different types of quotes.")
 
+st.subheader("Confusing Strings")
+st.markdown("""
+            Often strings can look empty but are actually not. The most common mistake is to consider whitespaces as just blank space. However, remember that even a whitespace is still considered to be a character. This means that `" "` is a valid `str` value, and is not empty. A way to think about the whitespace is that it takes up space, and thus is a character.
+
+            The other confusion comes with numbers. For example, `"123"` is a `str` value, not an `int` or `float` value. Although the contents of the string is what we would consider a number, Python sees the quotes and treats the contents as characters. It just happens that those characters form a number to us. Now we can leverage this to convert strings into actual numbers, which we will cover in the "Typecasting" section later on.
+            """)
+
 st.markdown("---")
 
 # Variable assignment
@@ -257,7 +264,7 @@ st.markdown("""
             When converting a `float` to an `int`, the decimal point and anything after it is removed. For example, `int(1.9999)` will return `1`. When converting any number to a string, just add quotes around the number. For example, `str(1.0)` will return `\"1.0\"`.
             """)
 
-st.subheader("Most Common Mistake")
+st.subheader("Most Common Typecasting Mistake")
 st.markdown("""
             We know that converting a `float` to an `int` will remove the decimal point and anything after it, but what happens if you try to convert a string that contains a decimal number to an `int`? An error occurs!
 
@@ -272,7 +279,7 @@ st.markdown("""
             ```
             """)
 
-st.subheader("The not as common mistake")
+st.subheader("The not as common typecasting mistake")
 st.markdown("""
             The other mistake people do is not assigning the new value to a variable. When you convert the type, it stores the new value. However, you need to store it yourself in a variable if you want to use it later:
 

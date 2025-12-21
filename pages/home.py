@@ -6,21 +6,89 @@ st.title("Home")
 st.markdown("""
             Welcome to this Intro to Python notes collection! It was designed as a quick reference for the basics of Python. Each page has a different set of topics and contains examples and questions to test your understanding. **This is a work in progress, so expect to see updates and changes in the near future!**
 
-            The chapters can be selected from the sidebar on the left. If you can't see it, there should be a button in the top left corner of the page that looks like \">>\". This sidebar is collapsible, so you can collapse it if you want to.
+            The chapters can be selected from the sidebar on the left. If you can't see it, there should be a button in the top left corner of the page that looks like ">>". This sidebar is collapsible, so you can collapse it if you want to.
+            """)
+st.markdown("---")
 
-            The chapters are as follows:
-            - 00\. Home
-            - 01\. Setup
-            - 02\. Variables and Data Types
-            - 03\. Basic Output
-            - 04\. Basic Math Operations
-            - 05\. User Input
-            - 06\. Planning and Design
-            - 07\. Conditionals
-            - 08\. Functions
-            - 09\. Loops
-            - 10\. Lists
-            """,)
+# Course Outline
+st.header("Course Outline")
+
+# Getting Started
+st.subheader("Getting Started")
+st.markdown("""
+**Module 0: Home**  
+Welcome and course navigation
+
+**Module 1: Setup**  
+Install Python, configure your PATH, and choose an IDE (repl.it, VSCode, or PyCharm)
+""")
+
+# Fundamentals
+st.subheader("Fundamentals")
+st.markdown("""
+**Module 2: Variables and Data Types**  
+ - Numeber data types: `int` and `float`
+ - String data type: `str`
+ - Variable assignment
+ - Naming conventions
+ - Typecasting
+
+**Module 3: Basic Output**  
+ - Printing to the console
+ - Printing multiple values
+ - Adjusting `print()` behavior
+ - f-strings
+ - Formatting the f-string insertions
+
+**Module 4: Basic Math Operations**  
+ - Overview
+ - Using math operations
+ - Rules regarding math with certain data types
+
+**Module 5: User Input**  
+ - Using `input()`
+ - Typecasting
+""")
+
+# Problem-Solving
+st.subheader("Problem-Solving & Design")
+st.markdown("""
+**Module 6: Planning and Design**  
+ - Input, Processing, and Output
+""")
+
+# Control Flow
+st.subheader("Control Flow")
+st.markdown("""
+**Module 7: Conditionals**  
+ - Boolean data type
+ - `if` keyword
+ - Relational operators
+ - `and` and `or` keywords
+ - `elif` and `else` keywords
+ - Nested conditionals
+
+**Module 8: Functions**  
+ - Function structure
+ - Parameters and return values
+ - Calling functions
+ - Scope
+ - Return statements
+ - Pass by reference, pass by value
+
+**Module 9: Loops**  
+ - `for` loops
+ - `range()` function
+ - `while` loops
+""")
+
+# Functions
+st.subheader("Data Structures")
+st.markdown("""
+**Module 10: Lists**
+""")
+
+
 st.markdown("---")
 
 st.header("About the Author")
@@ -34,4 +102,3 @@ st.markdown("""
 
 st.markdown("---")
 st.caption("© 2025 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")
-

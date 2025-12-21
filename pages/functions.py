@@ -27,19 +27,19 @@ st.subheader("Quiz: Function Structure")
 st.markdown("""
             **Q1:** What keyword is used to define a function?
             """)
-user_answer = st.radio("Answers:", ["recipe", "def", "define", "make"], key="function_structure_1", index=None)
-if user_answer == "def":
+answer_function_definition_keyword = st.radio("Question 1: Which keyword defines a function in Python?", ["recipe", "def", "define", "make"], key="function_structure_1", index=None, label_visibility="collapsed")
+if answer_function_definition_keyword == "def":
     st.success("Correct! The `def` keyword is used to define a function.")
-elif user_answer is not None:
+elif answer_function_definition_keyword is not None:
     st.error("Incorrect. The `def` keyword is used to define a function.")
 
 st.markdown("""
             **Q2:** No matter what, what must come after the function name?
             """)
-user_answer = st.radio("Answers:", ["brackets", "curly braces", "square brackets", "parentheses"], key="function_structure_2", index=None)
-if user_answer == "parentheses":
+answer_function_syntax_after_name = st.radio("Question 2: What punctuation must follow a function name?", ["brackets", "curly braces", "square brackets", "parentheses"], key="function_structure_2", index=None, label_visibility="collapsed")
+if answer_function_syntax_after_name == "parentheses":
     st.success("Correct! A pair of parentheses are used to define the parameters of the function.")
-elif user_answer is not None:
+elif answer_function_syntax_after_name is not None:
     st.error("Incorrect. A pair of parentheses are used to define the parameters of the function.")
 
 st.markdown("---")
@@ -66,10 +66,10 @@ st.subheader("Quiz: Parameters")
 st.markdown("""
             **Q1:** Where are the parameters defined?
             """)
-user_answer = st.radio("Answers:", ["in the function body", "outside the function", "inside the parentheses"], key="parameters_1", index=None)
-if user_answer == "inside the parentheses":
+answer_parameter_definition_location = st.radio("Question 1: Where are function parameters defined?", ["in the function body", "outside the function", "inside the parentheses"], key="parameters_1", index=None, label_visibility="collapsed")
+if answer_parameter_definition_location == "inside the parentheses":
     st.success("Correct! The parameters are defined inside the parentheses after the function name.")
-elif user_answer is not None:
+elif answer_parameter_definition_location is not None:
     st.error("Incorrect. The parameters are defined inside the parentheses after the function name.")
 
 st.markdown("---")
@@ -102,14 +102,14 @@ st.markdown("""
             ```python
             def multiply_three_numbers(a, b, c):
                 print(a * b * c)
-            
+
             multiply_three_numbers(2, 3, 5)
             ```
             """)
-user_answer = st.text_input("Enter your answer (hit Enter to submit):", key="calling_functions_1")
-if user_answer == "30":
+answer_function_call_output = st.text_input("Question 1: Enter the output when calling multiply_three_numbers(2, 3, 5) (hit Enter to submit)", key="calling_functions_1", label_visibility="collapsed")
+if answer_function_call_output == "30":
     st.success("Correct! The function is called with the arguments `2`, `3`, and `5`. These are assigned to the parameters `a`, `b`, and `c` in the function. Multiplying them together gives `30`.")
-elif len(user_answer) > 0:
+elif len(answer_function_call_output) > 0:
     st.error("Incorrect! The function is called with the arguments `2`, `3`, and `5`. These are assigned to the parameters `a`, `b`, and `c` in the function. Multiplying them together gives `30`.")
 
 st.markdown("""
@@ -120,10 +120,10 @@ st.markdown("""
             multiply_three_numbers(2, 3, 5, 7)
             ```
             """)
-user_answer = st.radio("Answers:", ["30", "210", "105", "error"], key="calling_functions_2", index=None)
-if user_answer == "error":
+answer_function_too_many_arguments = st.radio("Question 2: What happens when calling the function with 4 arguments instead of 3?", ["30", "210", "105", "error"], key="calling_functions_2", index=None, label_visibility="collapsed")
+if answer_function_too_many_arguments == "error":
     st.success("Correct! The function is called with the arguments `2`, `3`, and `5`, and `7`. However, the function only has three parameters. This will cause an error due to there being more arguments than parameters.")
-elif user_answer is not None:
+elif answer_function_too_many_arguments is not None:
     st.error("Incorrect! The function is called with the arguments `2`, `3`, and `5`, and `7`. However, the function only has three parameters. This will cause an error due to there being more arguments than parameters.")
 
 st.markdown("---")
@@ -181,20 +181,20 @@ st.subheader("Quiz: Scope")
 st.markdown("""
             **Q1:** Can local variables be accessed outside of the function they are defined in?
             """)
-user_answer = st.radio("Answers:", ["yes", "no"], key="scope_1", index=None)
-if user_answer == "no":
+answer_local_variable_scope = st.radio("Question 1: Can local variables be accessed outside their function?", ["yes", "no"], key="scope_1", index=None, label_visibility="collapsed")
+if answer_local_variable_scope == "no":
     st.success("Correct! Local variables are only accessible within the function they are defined in.")
-elif user_answer is not None:
+elif answer_local_variable_scope is not None:
     st.error("Incorrect. Local variables are only accessible within the function they are defined in.")
 
 # Question about global vs local
 st.markdown("""
             **Q2:** Are global variables changed when they are used as arguments (assume values are of basic data types)?
             """)
-user_answer = st.radio("Answers:", ["yes", "no"], key="scope_2", index=None)
-if user_answer == "no":
+answer_global_variable_modification = st.radio("Question 2: Do global variables change when used as function arguments?", ["yes", "no"], key="scope_2", index=None, label_visibility="collapsed")
+if answer_global_variable_modification == "no":
     st.success("Correct! Global variables are not changed when they are used as arguments.")
-elif user_answer is not None:
+elif answer_global_variable_modification is not None:
     st.error("Incorrect. Global variables are not changed when they are used as arguments. They are stored in local variables that store the same value, but they do not influence the arguments they took values from")
 
 st.markdown("---")
@@ -233,24 +233,24 @@ st.markdown("""
             ```python
             def add_three_numbers(a, b, c):
                 return a + b + c
-            
+
             add_three_numbers(1, 2, 3)
             ```
             """)
-user_answer = st.radio("Answers:", ["6", "12", "Nothing", "Error"], key="return_statements_1", index=None)
-if user_answer == "Nothing":
+answer_return_without_assignment = st.radio("Question 1: What is output when function returns but value isn't stored?", ["6", "12", "Nothing", "Error"], key="return_statements_1", index=None, label_visibility="collapsed")
+if answer_return_without_assignment == "Nothing":
     st.success("Correct! The function is called, however, there is no variable to store the returned value, so it is lost.")
-elif user_answer is not None:
+elif answer_return_without_assignment is not None:
     st.error("Incorrect. The function is called, however, there is no variable to store the returned value, so it is lost. Thus, there is no output.")
 
 # Question about using return syntax
 st.markdown("""
             **Q2:** What is the correct syntax for a `return` statement?
             """)
-user_answer = st.radio("Answers:", ["return {value}", "return({value})", "return[{value}]"], key="return_statements_2", index=None)
-if user_answer == "return {value}":
+answer_return_statement_syntax = st.radio("Question 2: What is the correct syntax for returning a value?", ["return {value}", "return({value})", "return[{value}]"], key="return_statements_2", index=None, label_visibility="collapsed")
+if answer_return_statement_syntax == "return {value}":
     st.success("Correct! The value to be returned is just separated from the `return` keyword by a space.")
-elif user_answer is not None:
+elif answer_return_statement_syntax is not None:
     st.error("Incorrect. The value to be returned is just separated from the `return` keyword by a space.")
 
 st.markdown("---")
@@ -281,11 +281,10 @@ st.markdown("""
 
             In the above scenario, sharing the pencil is an example of pass by reference. You are giving your friend the actual pencil, so any changes to the pencil will be reflected on the actual pencil. However, when you give your friend the quiz paper, you are giving a copy of the quiz paper, not your own actual quiz paper. Functionally, the quiz papers are identical, but what your friend does to their own quiz paper will not affect your quiz paper.
 
-            Now back to Python, passing in integers or floats or strings are all examples of pass by value.
+            Now back to Python, passing in integers or floats or strings are all examples of pass by value. A copy of the value is made and passed into the function, so any changes to the value **will not affect** the original value. Although the two values are identical in value, they are not literally the same value. For example, having `a = 1` and `b = 1` does not mean that `a` and `b` are the same variable. They are two different variables with the same value.
+
+            With lists, you are passing in a reference to the list, which means the function is handed the original list, not a copy of the list. The exact definition of a reference is not necessary to understand at this point, but roughly speaking, the reference can be thought of as a piece of paper with the address of the list written on it. The function knows exactly where to find the original list so it can make changes to it. Because of this, the function has access to the original list, not an copy of the list. Thus, the function can and will only modify the original list (as there is no copy of the list to modify).
             """)
-
-
-
 
 
 st.caption("© 2025 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

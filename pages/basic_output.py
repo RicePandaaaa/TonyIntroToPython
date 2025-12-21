@@ -26,10 +26,10 @@ st.markdown("""
             print('Hello, world!')
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["Hello, world!", "\'Hello, world!\'"], key="print_q1", index=None)
-if user_answer == "Hello, world!":
+answer_print_string_output = st.radio("Question 1: What will be output when printing the string 'Hello, world!'?", ["Hello, world!", "\'Hello, world!\'"], key="print_q1", index=None, label_visibility="collapsed")
+if answer_print_string_output == "Hello, world!":
     st.success("Correct! `print()` will not output the quotes that enclose the string.")
-elif user_answer == "\'Hello, world!\'":
+elif answer_print_string_output == "\'Hello, world!\'":
     st.error("Incorrect. `print()` will not output the quotes that enclose the string.")
 
 st.markdown("""
@@ -38,10 +38,10 @@ st.markdown("""
             print(123)
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q2:", ["123", "\'123\'"], key="print_q2", index=None)
-if user_answer == "123":
+answer_print_integer_output = st.radio("Question 2: What will be output when printing the integer 123?", ["123", "\'123\'"], key="print_q2", index=None, label_visibility="collapsed")
+if answer_print_integer_output == "123":
     st.success("Correct! `print()` will output the value as is.")
-elif user_answer == "\'123\'":
+elif answer_print_integer_output == "\'123\'":
     st.error("Incorrect. `print()` will output the value as is.")
 
 st.markdown("---")
@@ -79,10 +79,10 @@ st.markdown("""
             print(name_one, name_two)
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["\'123\' 456", "123 456"], key="print_q3", index=None)
-if user_answer == "123 456":
+answer_print_multiple_values_output = st.radio("Question 1: What is the output when printing a string and an integer together?", ["\'123\' 456", "123 456"], key="print_q3", index=None, label_visibility="collapsed")
+if answer_print_multiple_values_output == "123 456":
     st.success("Correct! `print()` will print both values on the same line, separated by a space. With the string, the outside quotes will be stripped before printing.")
-elif user_answer == "\'123\' 456":
+elif answer_print_multiple_values_output == "\'123\' 456":
     st.error("Incorrect. `print()` will remove the outside quotes from the string before printing.")
 
 st.markdown("---")
@@ -116,10 +116,10 @@ st.subheader("Quiz: Adjusting `print()` behavior")
 st.markdown("""
             **Q1: If you wanted to separate values with a comma instead of a space, what would you use?**
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["`end=','`", "`sep=','`"], key="print_q4", index=None)
-if user_answer == "`sep=','`":
+answer_print_separator_parameter = st.radio("Question 1: Which parameter controls the separator between printed values?", ["`end=','`", "`sep=','`"], key="print_q4", index=None, label_visibility="collapsed")
+if answer_print_separator_parameter == "`sep=','`":
     st.success("Correct! `sep` is used to specify the separator between the values you want to print.")
-elif user_answer == "`end=','`":
+elif answer_print_separator_parameter == "`end=','`":
     st.error("Incorrect. `end` is used to specify the string to print at the end of the output. `sep` is used to specify the separator between the values you want to print.")
 
 st.markdown("""
@@ -129,10 +129,10 @@ st.markdown("""
             print("Alana", end="|")
             print("Alana")
             """)
-user_answer = st.radio("Choose the correct answer for Q2:", ["1", "2"], key="print_q5", index=None)
-if user_answer == "1":
+answer_print_end_parameter_lines = st.radio("Question 2: How many lines will be printed when using the end parameter?", ["1", "2"], key="print_q5", index=None, label_visibility="collapsed")
+if answer_print_end_parameter_lines == "1":
     st.success("Correct! The value for `end` in the first `print` does not contain a newline character (`\\n`), so the second `print` will be printed on the same line as the first one.")
-elif user_answer == "2":
+elif answer_print_end_parameter_lines == "2":
     st.error("Incorrect. The value for `end` in the first `print` does not contain a newline character (`\\n`), so the second `print` will be printed on the same line as the first one.")
 
 st.markdown("---")
@@ -164,12 +164,12 @@ st.subheader("Quiz: f-string syntax")
 st.markdown("""
             **Q1: What are the two parts of an f-string?**
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["`f` and the curly braces", "`f` and a variable name", "curly braces and a variable name"], key="print_q6", index=None)
-if user_answer == "`f` and the curly braces":
+answer_fstring_components = st.radio("Question 1: What are the two required parts of an f-string?", ["`f` and the curly braces", "`f` and a variable name", "curly braces and a variable name"], key="print_q6", index=None, label_visibility="collapsed")
+if answer_fstring_components == "`f` and the curly braces":
     st.success("Correct! The `f` is the prefix, and the curly braces are used to embed any value.")
-elif user_answer == "`f` and a variable name":
+elif answer_fstring_components == "`f` and a variable name":
     st.error("Incorrect. The variable name is actually not needed since any value can be embedded. However, the curly braces are needed to show where the value is embedded.")
-elif user_answer == "curly braces and a variable name":
+elif answer_fstring_components == "curly braces and a variable name":
     st.error("Incorrect. The variable name is actually not needed since any value can be embedded. However, `f` prefix is needed to tell Python that this is an f-string.")
 
 st.markdown("---")

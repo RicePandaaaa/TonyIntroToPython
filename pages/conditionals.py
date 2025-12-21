@@ -65,21 +65,21 @@ st.markdown("""
 st.markdown("""
             **Q1:** If the condition is `True`, what will be printed?
             """)
-user_answer = st.radio("Answers:", ["Hello World", "Hello", "World"], key="if_1", index=None)
-if user_answer == "Hello World":
+answer_if_statement_true_condition = st.radio("Question 1: What output when the if condition is True?", ["Hello World", "Hello", "World"], key="if_1", index=None, label_visibility="collapsed")
+if answer_if_statement_true_condition == "Hello World":
     st.success("Correct! The code block is executed because the condition is `True`, and the second `print()` executes no matter what since it is not tied to the condition.")
-elif user_answer == "Hello":
+elif answer_if_statement_true_condition == "Hello":
     st.error("Incorrect. The second `print()` executes no matter what since it is not tied to the condition, so the answer is `Hello World`.")
-elif user_answer == "World":
+elif answer_if_statement_true_condition == "World":
     st.error("Incorrect. The condition is `True`, so the `Hello ` is printed. The correct answer is `Hello World`.")
 
 st.markdown("""
             **Q2:** If the condition is `False`, what will be printed?
             """)
-user_answer = st.radio("Answers:", ["Hello World", "Hello", "World"], key="if_2", index=None)
-if user_answer == "World":
+answer_if_statement_false_condition = st.radio("Question 2: What output when the if condition is False?", ["Hello World", "Hello", "World"], key="if_2", index=None, label_visibility="collapsed")
+if answer_if_statement_false_condition == "World":
     st.success("Correct! The code block is not executed because the condition is `False`, and the second `print()` executes no matter what since it is not tied to the condition.")
-elif user_answer is not None:
+elif answer_if_statement_false_condition is not None:
     st.error("Incorrect. The condition is `False`, so the code block is not executed, and the second `print()` executes no matter what since it is not tied to the condition. The correct answer is `World`.")
 
 st.markdown("---")
@@ -283,19 +283,19 @@ st.subheader("Quiz: `and` and `or`")
 st.markdown("""
             **Q1:** Do you use `and` or `or` for checking if both conditions are met?
             """)
-user_answer = st.radio("Answers:", ["`and`", "`or`"], key="and_or_1", index=None)
-if user_answer == "`and`":
+answer_and_operator_usage = st.radio("Question 1: Which operator checks if both conditions are True?", ["`and`", "`or`"], key="and_or_1", index=None, label_visibility="collapsed")
+if answer_and_operator_usage == "`and`":
     st.success("Correct! `and` is used to check if both conditions are met.")
-elif user_answer == "`or`":
+elif answer_and_operator_usage == "`or`":
     st.error("Incorrect. `or` is used to check if at least one of the conditions are met.")
 
 st.markdown("""
             **Q2:** Can you use `and` and `or` to chain together multiple conditions?
             """)
-user_answer = st.radio("Answers:", ["Yes", "No"], key="and_or_2", index=None)
-if user_answer == "Yes":
+answer_chaining_logical_operators = st.radio("Question 2: Can and/or operators be chained for multiple conditions?", ["Yes", "No"], key="and_or_2", index=None, label_visibility="collapsed")
+if answer_chaining_logical_operators == "Yes":
     st.success("Correct! You can use `and` and `or` to chain together multiple conditions.")
-elif user_answer == "No":
+elif answer_chaining_logical_operators == "No":
     st.error("Incorrect. You can use `and` and `or` to chain together multiple conditions.")
 
 
@@ -392,30 +392,30 @@ st.subheader("Quiz: `elif` and `else`")
 st.markdown("""
             **Q1:** What is the order of execution for `if`, `elif`, and `else`?
             """)
-user_answer = st.radio("Answers:", ["`if` first, then `else`, then `elif`", "`if` first, then `elif`, then `else`", "`else` first, then `if`, then `elif`", "`elif` first, then `if`, then `else`"], key="elif_else_1", index=None)
-if user_answer == "`if` first, then `elif`, then `else`":
+answer_elif_else_execution_order = st.radio("Question 1: What is the correct execution order for if/elif/else?", ["`if` first, then `else`, then `elif`", "`if` first, then `elif`, then `else`", "`else` first, then `if`, then `elif`", "`elif` first, then `if`, then `else`"], key="elif_else_1", index=None, label_visibility="collapsed")
+if answer_elif_else_execution_order == "`if` first, then `elif`, then `else`":
     st.success("Correct! `if` is checked first, then `elif`, then `else`.")
-elif user_answer is not None:
+elif answer_elif_else_execution_order is not None:
     st.error("Incorrect. `if` is checked first, then `elif`, then `else`.")
 
 # How many elif can you have
 st.markdown("""
             **Q2:** How many `elif` statements can you have after an `if` statement?
             """)
-user_answer = st.radio("Answers:", ["1", "2", "3", "Unlimited"], key="elif_else_2", index=None)
-if user_answer == "Unlimited":
+answer_elif_count_limit = st.radio("Question 2: How many elif statements are allowed after an if statement?", ["1", "2", "3", "Unlimited"], key="elif_else_2", index=None, label_visibility="collapsed")
+if answer_elif_count_limit == "Unlimited":
     st.success("Correct! You can have as many `elif` statements as you want.")
-elif user_answer is not None:
+elif answer_elif_count_limit is not None:
     st.error("Incorrect. You can have as many `elif` statements as you want.")
 
 # How many else's can you have
 st.markdown("""
             **Q3:** How many `else` statements can you have in following an `elif` or `if` statement?
             """)
-user_answer = st.radio("Answers:", ["1", "2", "3", "Unlimited"], key="elif_else_3", index=None)
-if user_answer == "1":
+answer_else_count_limit = st.radio("Question 3: How many else statements are allowed after an if/elif?", ["1", "2", "3", "Unlimited"], key="elif_else_3", index=None, label_visibility="collapsed")
+if answer_else_count_limit == "1":
     st.success("Correct! You can only have one `else` statement after an `elif` or `if` statement.")
-elif user_answer is not None:
+elif answer_else_count_limit is not None:
     st.error("Incorrect. You can only have one `else` statement after an `elif` or `if` statement.")
 
 st.markdown("---")
@@ -468,12 +468,12 @@ st.markdown("""
             else:
                 print("a is less than 10")  # 3
             """)
-user_answer = st.radio("Answers:", ["1", "2", "3"], key="nested_1", index=None)
-if user_answer == "2":
+answer_nested_conditionals_output = st.radio("Question 1: Which print statement executes with a=20 and b=4?", ["1", "2", "3"], key="nested_1", index=None, label_visibility="collapsed")
+if answer_nested_conditionals_output == "2":
     st.success("Correct! The first `print()` statement is executed because the first `if` statement is `True` and the second `if` statement is `True`.")
-elif user_answer == "1":
+elif answer_nested_conditionals_output == "1":
     st.error("Incorrect. `a > 10` indeed is `True`, but `b > 5` is `False`, so the second `print()` statement is executed instead of the first `print()` statement.")
-elif user_answer == "3":
+elif answer_nested_conditionals_output == "3":
     st.error("Incorrect. The condition for the first `if` statement is `True`, so that `else` is skipped, and thus the third `print()` statement is not executed. `a > 10` is `True` and `b > 5` is `False`, so the second `print()` statement is executed instead.")
 
 st.markdown("---")

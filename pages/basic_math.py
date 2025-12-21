@@ -89,22 +89,22 @@ st.markdown("""
             print(1 + 2 * 3)
             ```
             """)
-user_answer = st.text_input("Enter your answer (hit Enter to submit):", key="q1")
-if user_answer == "7":
+answer_order_of_operations_multiply_first = st.text_input("Question 1: Enter the result of 1 + 2 * 3 (hit Enter to submit)", key="q1", label_visibility="collapsed")
+if answer_order_of_operations_multiply_first == "7":
     st.success("Correct! The multiplication is done first, and then the addition. 2 * 3 is 6, and 1 + 6 is 7.")
-elif len(user_answer) > 0:
+elif len(answer_order_of_operations_multiply_first) > 0:
     st.error("Incorrect! The multiplication is done first, and then the addition. 2 * 3 is 6, and 1 + 6 is 7.")
 
 st.markdown("""
-            **Q2:** What is the output of the following code?
+            **Q2:** What is the output of the following code?**
             ```python
             print((1 + 2) * 3)
             ```
             """)
-user_answer = st.text_input("Enter your answer (hit Enter to submit):", key="q2")
-if user_answer == "9":
+answer_order_of_operations_with_parentheses = st.text_input("Question 2: Enter the result of (1 + 2) * 3 (hit Enter to submit)", key="q2", label_visibility="collapsed")
+if answer_order_of_operations_with_parentheses == "9":
     st.success("Correct! The addition is done first due to the parentheses, and then the multiplication. 1 + 2 is 3, and 3 * 3 is 9.")
-elif len(user_answer) > 0:
+elif len(answer_order_of_operations_with_parentheses) > 0:
     st.error("Incorrect! The addition is done first due to the parentheses, and then the multiplication. 1 + 2 is 3, and 3 * 3 is 9.")
 
 st.markdown("-" * 20)
@@ -164,12 +164,12 @@ st.markdown("""
             print("Ant" + "hony")
             ```
             """)
-user_answer = st.text_input("Enter your answer (hit Enter to submit):", key="q3")
-if user_answer == "Anthony":
+answer_string_concatenation_result = st.text_input("Question 1: Enter the result of concatenating \"Ant\" + \"hony\" (hit Enter to submit)", key="q3", label_visibility="collapsed")
+if answer_string_concatenation_result == "Anthony":
     st.success("Correct! The `+` sign is used to concatenate strings.")
-elif user_answer == "Ant hony":
+elif answer_string_concatenation_result == "Ant hony":
     st.error("Incorrect! The `+` sign is used to concatenate strings. However, it does not insert a space between the two strings. The result in this case is `Anthony`.")
-elif len(user_answer) > 0:
+elif len(answer_string_concatenation_result) > 0:
     st.error("Incorrect! Remember, the `+` sign is used to concatenate strings (without adding a space in between). The result in this case is `Anthony`.")
 
 st.markdown("""
@@ -178,10 +178,10 @@ st.markdown("""
             print("Alana" * 3)
             ```
             """)
-user_answer = st.text_input("Enter your answer (hit Enter to submit):", key="q4")
-if user_answer == "AlanaAlanaAlana":
+answer_string_multiplication_result = st.text_input("Question 2: Enter the result of \"Alana\" * 3 (hit Enter to submit)", key="q4", label_visibility="collapsed")
+if answer_string_multiplication_result == "AlanaAlanaAlana":
     st.success("Correct! The `*` sign is used to repeat a string.")
-elif len(user_answer) > 0:
+elif len(answer_string_multiplication_result) > 0:
     st.error("Incorrect! Remember, the `*` sign is used to repeat a string a certain amount of times. The result in this case is `AlanaAlanaAlana`.")
 
 st.markdown("---")

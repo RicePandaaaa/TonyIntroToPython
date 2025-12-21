@@ -32,20 +32,20 @@ st.markdown("""
             **Q1:** What goes inside the `input()` function (if you were to add something inside)?
             """)
 
-user_answer = st.radio("Choose your answer:", ("The prompt", "The variable that stores the input"), key="q1", index=None)
-if user_answer == "The prompt":
+answer_input_parameter = st.radio("Question 1: What goes inside the parentheses of the input() function?", ("The prompt", "The variable that stores the input"), key="q1", index=None, label_visibility="collapsed")
+if answer_input_parameter == "The prompt":
     st.success("Correct! Remember that the prompt has to be a string! Also, the prompt is optional, so you can just do `input()` if you want.")
-elif user_answer == "The variable that stores the input":
+elif answer_input_parameter == "The variable that stores the input":
     st.error("Incorrect! To store the input, you would assign the `input()` function to a variable, not put the variable inside the parentheses.")
 
 st.markdown("""
             **Q2:** What is the return type of the `input()` function?
             """)
 
-user_answer = st.radio("Choose your answer:", ("A number", "A boolean", "A string", "A list"), key="q2", index=None)
-if user_answer == "A string":
+answer_input_return_type = st.radio("Question 2: What data type does input() always return?", ("A number", "A boolean", "A string", "A list"), key="q2", index=None, label_visibility="collapsed")
+if answer_input_return_type == "A string":
     st.success("Correct! The `input()` function returns a string of the user's input.")
-elif user_answer is not None:
+elif answer_input_return_type is not None:
     st.error("Incorrect! The `input()` function returns a string of the user's input.")
 
 st.markdown("---")

@@ -35,19 +35,19 @@ st.subheader("Quiz: `int` or `float`?")
 st.markdown("""
             **Q1: Is 0.0 an `int` or a `float`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["int", "float"], key="num_q1", index=None)
-if user_answer == "float":
+answer_int_or_float_zero = st.radio("Question 1: Is 0.0 an int or a float?", ["int", "float"], key="num_q1", index=None, label_visibility="collapsed")
+if answer_int_or_float_zero == "float":
     st.success("Correct! Even though 0.0 is equal to 0, it is still a `float` because it has a decimal point.")
-elif user_answer == "int":
+elif answer_int_or_float_zero == "int":
     st.error("Incorrect. Even though 0.0 is equal to 0, it is still a `float` because it has a decimal point.")
 
 st.markdown("""
             **Q2: Is 123 an `int` or a `float`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q2:", ["int", "float"], key="num_q2", index=None)
-if user_answer == "int":
+answer_int_or_float_123 = st.radio("Question 2: Is 123 an int or a float?", ["int", "float"], key="num_q2", index=None, label_visibility="collapsed")
+if answer_int_or_float_123 == "int":
     st.success("Correct! 123 is an `int` because it does not have a decimal point.")
-elif user_answer == "float":
+elif answer_int_or_float_123 == "float":
     st.error("Incorrect. 123 is an `int` because it does not have a decimal point.")
 
 st.markdown("---")
@@ -81,37 +81,37 @@ st.subheader("Quiz: Is the string valid?")
 st.markdown("""
             **Q1: Is `'Hello, world!'` a valid `str`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["Yes", "No"], key="str_q1", index=None)
-if user_answer == "Yes":
+answer_string_hello_world_validity = st.radio("Question 1: Is the string 'Hello, world!' with single quotes valid?", ["Yes", "No"], key="str_q1", index=None, label_visibility="collapsed")
+if answer_string_hello_world_validity == "Yes":
     st.success("Correct! `'Hello, world!'` is a valid `str` because it is enclosed in single quotes.")
-elif user_answer == "No":
+elif answer_string_hello_world_validity == "No":
     st.error("Incorrect. `'Hello, world!'` is a valid `str` because it is enclosed by the same type of quotes! Single or double quotes are both valid.")
 
 st.markdown("""
             **Q2: Is `'Howdy''` a valid `str`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q2:", ["Yes", "No"], key="str_q2", index=None)
-if user_answer == "No":
+answer_string_howdy_validity = st.radio("Question 2: Is the string 'Howdy'' valid (note the extra quote)?", ["Yes", "No"], key="str_q2", index=None, label_visibility="collapsed")
+if answer_string_howdy_validity == "No":
     st.success("Correct! `'Howdy''` is invalid because it is both enclosed in single quotes and contains a single quote.")
-elif user_answer == "Yes":
+elif answer_string_howdy_validity == "Yes":
     st.error("Incorrect. `'Howdy''` is invalid because it is both enclosed in single quotes and contains a single quote. To use the single quote, use double quotes instead to enclose the string (e.g. `\"can't\")`")
 
 st.markdown("""
             **Q3: Is `'\"cat'` a valid `str`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q3:", ["Yes", "No"], key="str_q3", index=None)
-if user_answer == "Yes":
+answer_string_quote_cat_validity = st.radio("Question 3: Is the string '\"cat' valid (starts with single quote, contains double quote)?", ["Yes", "No"], key="str_q3", index=None, label_visibility="collapsed")
+if answer_string_quote_cat_validity == "Yes":
     st.success("Correct! `'\"cat'` is a valid `str` because it is enclosed in double quotes and contains a single quote.")
-elif user_answer == "No":
+elif answer_string_quote_cat_validity == "No":
     st.error("Incorrect. `'\"cat'` is a valid `str` because it is enclosed in double quotes and contains a single quote.")
 
 st.markdown("""
             **Q4: Is `'\"` a valid `str`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q4:", ["Yes", "No"], key="str_q4", index=None)
-if user_answer == "No":
+answer_string_mismatched_quotes_validity = st.radio("Question 4: Is the string '\" valid (mismatched quote types)?", ["Yes", "No"], key="str_q4", index=None, label_visibility="collapsed")
+if answer_string_mismatched_quotes_validity == "No":
     st.success("Correct! `'\"` is not a valid string because the quotes are different. A string can be empty, but it cannot be enclosed in different types of quotes.")
-elif user_answer == "Yes":
+elif answer_string_mismatched_quotes_validity == "Yes":
     st.error("Incorrect. `'\"` is not a valid string because the quotes are different. A string can be empty, but it cannot be enclosed in different types of quotes.")
 
 st.subheader("Confusing Strings")
@@ -141,12 +141,12 @@ st.subheader("Quiz: Value Assignment")
 st.markdown("""
             **Q1: Assign the value `123` to the variable `x`**
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["x = 123", "123 = x", "= 123 x", "x 123 ="], key="var_q1", index=None)
-if user_answer == "x = 123":
+answer_assign_123_to_x = st.radio("Question 1: Choose the correct syntax to assign 123 to variable x", ["x = 123", "123 = x", "= 123 x", "x 123 ="], key="var_q1", index=None, label_visibility="collapsed")
+if answer_assign_123_to_x == "x = 123":
     st.success("Correct! `x = 123` is the correct syntax to assign the value `123` to the variable `x`.")
-elif user_answer == "123 = x":
+elif answer_assign_123_to_x == "123 = x":
     st.error("Incorrect. The variable needs to be on the left side of the assignment operator (`=`) and the value needs to be on the right side.")
-elif (user_answer == "= 123 x") or (user_answer == "x 123 ="):
+elif (answer_assign_123_to_x == "= 123 x") or (answer_assign_123_to_x == "x 123 ="):
     st.error("Incorrect. The assignment operator needs to be in the middle, with the name of the variable on the left and the value on the right.")
 
 st.markdown("""
@@ -161,14 +161,14 @@ st.markdown("""
 
             **What is the final value of `a`?**
             """)
-user_answer = st.radio("Choose the correct answer for Q2:", ["1", "4", "7", "8"], key="var_reassign_q1", index=None)
-if user_answer == "8":
+answer_variable_reassignment_final_value = st.radio("Question 2: After multiple reassignments, what is the final value of variable a?", ["1", "4", "7", "8"], key="var_reassign_q1", index=None, label_visibility="collapsed")
+if answer_variable_reassignment_final_value == "8":
     st.success("Correct! The final assignment of `a` was the value of `b`. `b`'s final value is `8`, so `a` is assigned the value `8`.")
-elif user_answer == "4":
+elif answer_variable_reassignment_final_value == "4":
     st.error("Incorrect. `b` did have the value `4` initially, but it was overwritten by the value `8` right before `a` took on the value of `b`. This means that when `a = b` is executed, `b` was already changed to `8`, and thus `a` is assigned the value `8`.")
-elif user_answer == "7":
+elif answer_variable_reassignment_final_value == "7":
     st.error("Incorrect. `a` was assigned a different value two lines after with `a = b`. This means that `a` is now assigned the value `8` since `b` is 8 at the time of that assignment.")
-elif user_answer == "1":
+elif answer_variable_reassignment_final_value == "1":
     st.error("Incorrect. `a` gets assigned two more different values after the initial assignment of `1`. With the final assignment being `a = b`, `a` is assigned the value stored in `b`, which is `8`.")
 st.markdown("---")
 
@@ -211,16 +211,16 @@ st.subheader("Quiz: Valid variable names")
 st.markdown("""
             **Q1: Choose the valid variable name:**
             """)
-user_answer = st.radio("Answers:", ["123", "my_variable", "my.Variable", "my-variable", "my variable"], key="var_name_q1", index=None)
-if user_answer == "my_variable":
+answer_valid_variable_name_choice = st.radio("Question 1: Which of these is a valid Python variable name?", ["123", "my_variable", "my.Variable", "my-variable", "my variable"], key="var_name_q1", index=None, label_visibility="collapsed")
+if answer_valid_variable_name_choice == "my_variable":
     st.success("Correct! `my_variable` is a valid variable name because it contains only letters, numbers, and underscores, and does not start with a number.")
-elif user_answer == "123":
+elif answer_valid_variable_name_choice == "123":
     st.error("Incorrect. `123` is not a valid variable name because it starts with a number.")
-elif user_answer == "my.Variable":
+elif answer_valid_variable_name_choice == "my.Variable":
     st.error("Incorrect. `my.Variable` is not a valid variable name because it contains a period. Remember, no punctuation is allowed other than underscores!")
-elif user_answer == "my-variable":
+elif answer_valid_variable_name_choice == "my-variable":
     st.error("Incorrect. `my-variable` is not a valid variable name because it contains a hyphen. Remember, no punctuation is allowed other than underscores!")
-elif user_answer == "my variable":
+elif answer_valid_variable_name_choice == "my variable":
     st.error("Incorrect. `my variable` is not a valid variable name because it contains a space. Remember, no spaces are allowed in variable names!")
 
 st.markdown("---")
@@ -302,14 +302,14 @@ st.markdown("""
             y = str(x)
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q1:", ["123", "\"123\"", "123.0", "\"123.0\""], key="typecast_q1", index=None)
-if user_answer == "\"123\"":
+answer_typecast_str_from_int = st.radio("Question 1: What is the value of y after converting 123 to a string?", ["123", "\"123\"", "123.0", "\"123.0\""], key="typecast_q1", index=None, label_visibility="collapsed")
+if answer_typecast_str_from_int == "\"123\"":
     st.success("Correct! `str(123)` returns `\"123\"`.")
-elif user_answer == "123":
+elif answer_typecast_str_from_int == "123":
     st.error("Incorrect. You are being asked for the value of `y`, not `x`.")
-elif user_answer == "123.0":
+elif answer_typecast_str_from_int == "123.0":
     st.error("Incorrect. `str(123)` adds quotes around the number instead of adding the decimal point (which `float()` would do).")
-elif user_answer == "\"123.0\"":
+elif answer_typecast_str_from_int == "\"123.0\"":
     st.error("Incorrect. `str(123)` only adds quotes around the number. The decimal point is only added by `float()` (and `float()` would not add the quotes).")
 
 st.markdown("""
@@ -318,14 +318,14 @@ st.markdown("""
             z = int(\"123.45\")
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q2:", ["123", "\"123.45\"", "Error","123.45"], key="typecast_q2", index=None)
-if user_answer == "Error":
+answer_typecast_int_from_decimal_string = st.radio("Question 2: What happens when converting string \"123.45\" to an integer?", ["123", "\"123.45\"", "Error","123.45"], key="typecast_q2", index=None, label_visibility="collapsed")
+if answer_typecast_int_from_decimal_string == "Error":
     st.success("Correct! `int(\"123.45\")` returns an error because the string contains a decimal point. \"123.45\" without the quotes is `123.45`, which is not an integer.")
-elif user_answer == "123":
+elif answer_typecast_int_from_decimal_string == "123":
     st.error("Incorrect. `int(\"123.45\")` returns an error because the string contains a decimal point. \"123.45\" without the quotes is `123.45`, which is not an integer.")
-elif user_answer == "\"123.45\"":
+elif answer_typecast_int_from_decimal_string == "\"123.45\"":
     st.error("Incorrect. `int(\"123.45\")` returns an error because the string contains a decimal point. \"123.45\" without the quotes is `123.45`, which is not an integer.")
-elif user_answer == "123.45":
+elif answer_typecast_int_from_decimal_string == "123.45":
     st.error("Incorrect. `int(\"123.45\")` returns an error because the string contains a decimal point. \"123.45\" without the quotes is `123.45`, which is not an integer.")
 
 st.markdown("""
@@ -334,14 +334,14 @@ st.markdown("""
             abc = float(\"123.45\")
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q3:", ["123", "123.45", "Error", "\"123.45\""], key="typecast_q3", index=None)
-if user_answer == "123.45":
+answer_typecast_float_from_string = st.radio("Question 3: What is the value of abc after converting string \"123.45\" to a float?", ["123", "123.45", "Error", "\"123.45\""], key="typecast_q3", index=None, label_visibility="collapsed")
+if answer_typecast_float_from_string == "123.45":
     st.success("Correct! `float(\"123.45\")` returns `123.45`.")
-elif user_answer == "123":
+elif answer_typecast_float_from_string == "123":
     st.error("Incorrect. The decimal point and the numbers afterward are kept when converting to a `float`. If you casted to `int` though, you would get `123`.")
-elif user_answer == "Error":
+elif answer_typecast_float_from_string == "Error":
     st.error("Incorrect. The value within the string is a valid number, so it can be converted to a `float`.")
-elif user_answer == "\"123.45\"":
+elif answer_typecast_float_from_string == "\"123.45\"":
     st.error("Incorrect. `float()` will not remove the surrouding quotes.")
 
 st.markdown("""
@@ -350,14 +350,14 @@ st.markdown("""
             weight = int(123.45)
             ```
             """)
-user_answer = st.radio("Choose the correct answer for Q4:", ["123", "123.45", "Error", "\"123.45\""], key="typecast_q4", index=None)
-if user_answer == "123":
+answer_typecast_int_from_float = st.radio("Question 4: What is the value of weight after converting 123.45 to an integer?", ["123", "123.45", "Error", "\"123.45\""], key="typecast_q4", index=None, label_visibility="collapsed")
+if answer_typecast_int_from_float == "123":
     st.success("Correct! `int(123.45)` returns `123`.")
-elif user_answer == "123.45":
+elif answer_typecast_int_from_float == "123.45":
     st.error("Incorrect. Casting to an `int` will remove the decimal point and anything after it.")
-elif user_answer == "Error":
+elif answer_typecast_int_from_float == "Error":
     st.error("Incorrect. The value without the quotes is a valid integer, so it can be converted to an `int`.")
-elif user_answer == "\"123.45\"":
+elif answer_typecast_int_from_float == "\"123.45\"":
     st.error("Incorrect. Casting to an `int` will remove the decimal point and the following digits. Additionally, `int()` does not add any quotes.")
 
 

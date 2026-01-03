@@ -4,12 +4,25 @@ import streamlit as st
 st.set_page_config(page_title="Variables & Data Types", layout="wide")
 st.title("2: Variables and Data Types")
 
+st.info("""
+        **Summary of the chapter:**
+        - A variable is what we use to store information in a program.
+        - Three primitive data types: `int` (integer), `float` (floating point number), and `str` (string).
+        - `int` is used to store integers, while `float` is used to store floating point numbers (decimal numbers).
+        - `str` is used to store strings (text).
+        - Variables can be assigned a value using the assignment operator (`=`).
+        - Variable names must follow certain rules to be valid.
+        - We can convert between data types using the `int()`, `float()`, and `str()` functions.
+        """)
+
 st.markdown("---")
 
 # Introduction
 st.header("2.1: Introduction")
 st.markdown("""
             A variable is what we use to store information in a program. If the information can be represented as some sort of tangible value or object (e.g. a number or some text), then we can store in a variable. For Python to understand the information being stored, it has specific data types that it can work with. The core three are `int`, `float`, and `str`.
+
+            The first few sections will cover over the primitive (basic) data types for storing numbers and characters and how to store this data (with variables). The core of any project is how to store and manipulate data, and this first chapter is the foundation of having Python remember and use data! Also, as you use external datasets or files, you will need to know how to store and manipulate data in a way that Python can understand, and this is the foundation of that.
             """)
 
 st.markdown("---")
@@ -114,8 +127,8 @@ if answer_string_mismatched_quotes_validity == "No":
 elif answer_string_mismatched_quotes_validity == "Yes":
     st.error("Incorrect. `'\"` is not a valid string because the quotes are different. A string can be empty, but it cannot be enclosed in different types of quotes.")
 
-st.subheader("Confusing Strings")
-st.markdown("""
+st.header("Confusing Strings")
+st.error("""
             Often strings can look empty but are actually not. The most common mistake is to consider whitespaces as just blank space. However, remember that even a whitespace is still considered to be a character. This means that `" "` is a valid `str` value, and is not empty. A way to think about the whitespace is that it takes up space, and thus is a character.
 
             The other confusion comes with numbers. For example, `"123"` is a `str` value, not an `int` or `float` value. Although the contents of the string is what we would consider a number, Python sees the quotes and treats the contents as characters. It just happens that those characters form a number to us. Now we can leverage this to convert strings into actual numbers, which we will cover in the "Typecasting" section later on.
@@ -265,8 +278,10 @@ st.markdown("""
             """)
 
 st.subheader("Most Common Mistake")
-st.markdown("""
+st.error("""
             We know that converting a `float` to an `int` will remove the decimal point and anything after it, but what happens if you try to convert a string that contains a decimal number to an `int`? An error occurs!
+            """)
+st.markdown("""
 
             When you convert a string to an `int`, you need to see if the value without the quotes is an integer. For example, `\"123.45\"` without the quotes is `123.45`, which is not an integer. This means that `int(\"123.45\")` will return an error. Do not make the assumption that `int()` will also truncate the decimal point for you. You would need to convert to a `float` first and then to an `int` to get the integer part of the number. Below shows the side by side comparison of the incorrect and correct way to do this conversion.
 
@@ -280,8 +295,12 @@ st.markdown("""
             """)
 
 st.subheader("The not as common mistake")
+st.error("""
+            The other mistake people do is not assigning the new value to a variable. 
+            
+        """)
 st.markdown("""
-            The other mistake people do is not assigning the new value to a variable. When you convert the type, it stores the new value. However, you need to store it yourself in a variable if you want to use it later:
+            When you convert the type, it stores the new value. However, you need to store it yourself in a variable if you want to use it later:
 
             ```python
             # Can't use this value later

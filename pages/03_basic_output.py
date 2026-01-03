@@ -2,6 +2,15 @@ import streamlit as st
 
 st.title("3: Basic Output")
 
+st.info("""
+        **Summary of the chapter:**
+        - The `print()` function is used to output information to the console.
+        - `print()` will output the value as is for most values, but will not output the quotes for strings.
+        - `print()` can be used to print multiple values at once by separating them with a comma.
+        - `print()` can be used to adjust the separator and end of the output.
+        - f-strings are a way to embed and format variables in strings.
+        """)
+
 st.markdown("---")
 
 # Printing to the console

@@ -7,6 +7,8 @@ st.markdown("""
             Welcome to this Intro to Python notes collection! It was designed as a quick reference for the basics of Python. Each page has a different set of topics and contains examples and questions to test your understanding. **This is a work in progress, so expect to see updates and changes in the near future!**
             """)
 
+st.markdown("---")
+
 st.header("Teaching Philosophy")
 st.markdown("""
             My teaching methodology revolves in-depth explanation with quizzes along the way to help reinforce the material and ties to real-world applications so you can see the practicality of the material. To me, the most difficult part of learning how to code is realizing how to employ these concepts when you're actually trying to solve a problem or create something. I hope this engineering-esque approach is a fun blend of learning and satisfaction of making something!

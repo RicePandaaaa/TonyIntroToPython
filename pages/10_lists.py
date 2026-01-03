@@ -10,3 +10,7 @@ st.markdown("""
 
 st.markdown("---")
 st.header("Syntax")
+
+
+st.markdown("---")
+st.caption("© 2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

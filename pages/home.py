@@ -5,8 +5,13 @@ st.title("Home")
 # Tell users what the layout is
 st.markdown("""
             Welcome to this Intro to Python notes collection! It was designed as a quick reference for the basics of Python. Each page has a different set of topics and contains examples and questions to test your understanding. **This is a work in progress, so expect to see updates and changes in the near future!**
+            """)
 
-            The chapters can be selected from the sidebar on the left. If you can't see it, there should be a button in the top left corner of the page that looks like ">>". This sidebar is collapsible, so you can collapse it if you want to.
+st.header("Teaching Philosophy")
+st.markdown("""
+            My teaching methodology revolves in-depth explanation with quizzes along the way to help reinforce the material and ties to real-world applications so you can see the practicality of the material. To me, the most difficult part of learning how to code is realizing how to employ these concepts when you're actually trying to solve a problem or create something. I hope this engineering-esque approach is a fun blend of learning and satisfaction of making something!
+
+            Within each chapter is: a summary of the chapter, followed by the actual content. This content consists of the material itself, examples, quizzes, figures, and videos. There are also mini projects to help you practice the material and familiarize yourself with key practices and patterns.
             """)
 st.markdown("---")
 

@@ -1,6 +1,15 @@
 import streamlit as st
 
 st.title("7: Conditionals")
+
+st.info("""
+        **Summary of the chapter:**
+        - Booleans are the data type that represents the truth values `True` and `False`.
+        - The `if` keyword is used to make conditional statements.
+        - Relational operators are used to compare two values.
+        - The `and` and `or` keywords are used to combine multiple conditions.
+        - Nested conditionals are conditionals that are inside other conditionals.
+        """)
 st.markdown("---")
 
 # Introduction
@@ -30,9 +39,12 @@ st.markdown("""
             
             {not code block}
             ```
-
+            """)
+st.error("""
             Note the code block immediately follows the `if`, `elif`, or `else` keyword. You cannot have code between the code block and the conditional keyword that does not belong to the code block. Also note that the way for Python to know what code belongs to a conditional statement is the indentation. Indentation is almost always four spaces. Some IDEs allow for two or eight spaces, but any other number is not recommended and is likely to cause an error. You also need to be consistent with indentation (i.e. it's always two or four or eight spaces).
+        """)
 
+st.markdown("""
             Here are some examples of what not to do:
             ```python
             # Illegal indentation (wrong amount of spaces)
@@ -256,26 +268,6 @@ st.markdown("""
             if 0 < num < 10:
                 print("The number is between 0 and 10.")
             ```
-
-            A misconception is that this simplification is similar to math where you slowly condense an expression left to right, using the new values as you go:
-
-            ```
-            1 + 2 + 3
-            (1 + 2) + 3
-            3 + 3
-            6
-            ```
-
-            Python, for conditionals, actually checks each of the conditions one by one, then combines them together with the equivalent of `and` (essentially undoing the simplification):
-
-            ```python
-            0 < 5 < 10
-            (0 < 5) and (5 < 10)
-            True and True
-            True
-            ```
-
-            This is why you can't use `and` and `or` to chain together multiple conditions. You can only use them to combine two conditions at a time.
             """)
 
 # Short quiz on and/or
@@ -477,4 +469,4 @@ elif answer_nested_conditionals_output == "3":
     st.error("Incorrect. The condition for the first `if` statement is `True`, so that `else` is skipped, and thus the third `print()` statement is not executed. `a > 10` is `True` and `b > 5` is `False`, so the second `print()` statement is executed instead.")
 
 st.markdown("---")
-st.caption("© 2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")
+st.caption("© 2025-2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

@@ -2,6 +2,12 @@ import streamlit as st
 
 st.title("5: User Input")
 
+st.info("""
+        **Summary of the chapter:**
+        - The `input()` function is used to get user input from the terminal, and the input is always returned as a string.
+        - You can typecast the input to a number if you need to do math with it
+        """)
+
 # User input
 st.header("5.1: Introduction")
 st.markdown("""
@@ -22,9 +28,27 @@ st.markdown("""
             ```
 
             Note that the user is supposed to type their input directly after the prompt. Personally, I like to add a colon and a space after the prompt to make it clear that the user should type their input after the colon. Also, the space helps to separate the prompt from the user's input.
-
-            Also note that no matter what the user types (if anything at all), the input will be returned as a string. This means that if the user types a number, it will be returned as a string. This is important to remember because if you want to do math with the user's input, you will need to convert it to a number first. If they type in nothing but hit Enter anyways, the input will be an empty string.
             """)
+
+st.error("""
+            Also note that no matter what the user types (if anything at all), the input will be returned as a string. This means that if the user types a number, it will be returned as a string. This is important to remember because if you want to do math with the user's input, you will need to convert it to a number first. If they type in nothing but hit Enter anyways, the input will be an empty string.
+
+            This is important because a common error is to **forget to convert the input into a number**:
+
+            ```python
+            a = input("Enter a number: ")
+            print(a + 1)
+            ```
+
+            The output will be an error because `a` is a string and you cannot add a string and a number. You need to convert the input to a number first:
+
+            ```python
+            a = int(input("Enter a number: "))
+            print(a + 1)
+            ```
+
+            The output will be `2` because `a` is now an integer and you can add it to `1`.
+        """)
 
 # Quiz on what goes inside input() and the return type
 st.subheader("Quiz: `input()` basics")
@@ -67,4 +91,4 @@ st.markdown("""
             """)
 
 st.markdown("---")
-st.caption("© 2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")
+st.caption("© 2025-2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

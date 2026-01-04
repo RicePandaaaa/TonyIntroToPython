@@ -1,6 +1,15 @@
 import streamlit as st
 
 st.title("6: Planning and Design")
+
+st.info("""
+        **Summary of the chapter:**
+        - Planning and design is the process of breaking down an idea or problem into smaller, more manageable parts.
+        - The three major components of planning and design are input, processing, and output.
+        - Input is the information that the user provides to the program.
+        - Processing is what the program needs to do with the input.
+        - Output is the result of the processing.
+        """)
 st.markdown("---")
 
 # Introduction
@@ -84,4 +93,4 @@ st.markdown("""
             """)
 
 st.markdown("---")
-st.caption("© 2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")
+st.caption("© 2025-2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

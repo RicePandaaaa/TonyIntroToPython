@@ -1,6 +1,16 @@
 import streamlit as st
 
 st.title("4: Basic Math Operations")
+
+st.info("""
+        **Summary of the chapter:**
+        - Python supports the primary four math operations: addition, subtraction, multiplication, and division.
+        - There are also some other math operations that are supported: exponentiation, modulus, and floor division.
+        - Math operations can be used with any number, regardless of the type or even if the two values are of different types.
+        - For order of operations, Python follows standard mathematical order of operations.
+        - You can do addition and multiplication with strings!
+        - Be wary of what data types you are working with!
+        """)
 st.markdown("-" * 20)
 
 # Introduction
@@ -145,7 +155,14 @@ st.subheader("4.3.2: The power of `float`")
 st.markdown("""
             To simplify things, `float` is just more flexible than `int`. Remember, if you convert a `float` to an `int`, you will lose the decimal part (e.g `int(1.5)` is `1`). However, if you convert an `int` to a `float`, you will not lose any information. In fact, you gain some information (i.e. the decimal part is added). This means, if math is done with both `int`s and `float`s, the final result will be a `float` to ensure that no information is lost. The rule of thumb is that if you are doing math with a `float`, the final result will be a `float` no matter how many `int`s you have in the expression. Of course, this means, if there are no `float`s in the expression, the final result will be an `int`.
 
-            Now, there is one notable exception. If you do division with two `int`s, the final result is still a `float`. Even `1 / 1` is `1.0`! Now modulus and floor division still return an `int` even if there are only `int`s.
+            """)
+
+st.error("""
+            Now, there is one notable exception. If you do division with two `int`s, the final result is still a `float`. Even `1 / 1` is `1.0`! Now modulus and floor division still return an `int` even if there are only `int`s. 
+        """)
+
+st.markdown("""
+            Below is an example of this:
 
             ```python
             print(1 / 1)   # 1.0

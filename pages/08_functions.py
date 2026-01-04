@@ -1,6 +1,15 @@
 import streamlit as st
 
 st.title("8: Functions")
+
+st.info("""
+        **Summary of the chapter:**
+        - Functions are a way to group re-usable code together.
+        - The `def` keyword is used to define a function.
+        - Parameters are the inputs to a function.
+        - Arguments are the values passed to a function.
+        - The `return` keyword is used to return a value from a function.
+        """)
 st.markdown("---")
 
 st.header("8.1: Introduction")
@@ -287,4 +296,4 @@ st.markdown("""
             """)
 
 
-st.caption("© 2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")
+st.caption("© 2025-2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

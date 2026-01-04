@@ -2,6 +2,15 @@ import streamlit as st
 
 st.title("9: Loops")
 
+st.info("""
+        **Summary of the chapter:**
+        - Loops are a fundamental concept in programming.
+        - There are two types of loops in Python: `for` loops and `while` loops.
+        - A `for` loop is used to iterate over a sequence (e.g. a string) and execute a block of code for each item in the sequence.
+        - A `while` loop is used to execute a block of code repeatedly until a condition is met.
+        - The number of times the code is executed is not known beforehand, unlike a `for` loop.
+        """)
+
 st.markdown("""
             Loops are a fundamental concept in programming. They allow you to repeat a block of code multiple times. There are two types of loops in Python: `for` loops and `while` loops.
 
@@ -260,4 +269,4 @@ elif user_answer is not None:
 st.markdown("---")
 
 st.markdown("---")
-st.caption("© 2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")
+st.caption("© 2025-2026 Anthony Ha-Anh Pham | Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) | View source code on [GitHub](https://github.com/RicePandaaaa/TonyIntroToPython)")

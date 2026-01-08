@@ -14,6 +14,9 @@ conditionals_page = st.Page("pages/07_conditionals.py", title="Conditionals")
 functions_page = st.Page("pages/08_functions.py", title="Functions")
 loops_page = st.Page("pages/09_loops.py", title="Loops")
 lists_page = st.Page("pages/10_lists.py", title="Lists")
+tuples_page = st.Page("pages/11_tuples.py", title="Tuples")
+dictionaries_page = st.Page("pages/12_dictionaries.py", title="Dictionaries")
+collections_page = st.Page("pages/13_collections.py", title="Collections")
 
 # Simple grouped navigation
 pg = st.navigation({
@@ -21,7 +24,7 @@ pg = st.navigation({
     "Fundamentals": [variables_data_types_page, basic_output_page, basic_math_page, user_input_page],
     "Problem-Solving & Design": [planning_design_page],
     "Control Flow": [conditionals_page, functions_page, loops_page],
-    "Data Structures": [lists_page],
+    "Data Structures": [lists_page, tuples_page, dictionaries_page, collections_page],
 })
 
 pg.run()
